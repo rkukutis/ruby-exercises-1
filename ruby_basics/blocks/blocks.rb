@@ -38,5 +38,5 @@ add_one = proc {|num| num + 1}
 add_one_lambda = lambda {|num| num + 1}
 numbers = [0, 2, 5, 6, 7, 8, 9]
 p numbers.map(&:to_s)
-p numbers.map &add_one
-p numbers.map &add_one_lambda
+p numbers.map(&add_one)
+p numbers.map(&add_one_lambda)

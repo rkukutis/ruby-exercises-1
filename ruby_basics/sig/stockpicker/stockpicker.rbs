@@ -1,0 +1,3 @@
+class Object
+  def stock_picker: (Array[Integer] price_array) -> Array[Integer]
+end

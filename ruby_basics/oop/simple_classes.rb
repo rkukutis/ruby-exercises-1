@@ -7,10 +7,10 @@ class ScientificOrganization
 
   def conduct_experiment()
     if Random.rand < 0.5
-      puts "Experiment has been successfull :)"
+      puts 'Experiment has been successfull :)'
       0
     else
-      puts "Experiment has failed ;("
+      puts 'Experiment has failed ;('
       -1
     end
   end
@@ -20,18 +20,18 @@ class ScientificOrganization
   end
 end
 
-scientific_org = ScientificOrganization.new("Black Mesa")
+scientific_org = ScientificOrganization.new('Black Mesa')
 scientific_org.conduct_experiment
-scientific_org.welcome_visitor("Barney")
-scientific_org.name = "Aperture Science"
-scientific_org.welcome_visitor("Caroline")
+scientific_org.welcome_visitor('Barney')
+scientific_org.name = 'Aperture Science'
+scientific_org.welcome_visitor('Caroline')
 
 #///////////////////////////////////////////////////////////////////////////////////
 
 class MyCar
   attr_reader :year, :color
 
-  def initialize(year = 1998, color = "Maroon", model = "Mercedes-Benz")
+  def initialize(year = 1998, color = 'Maroon', model = 'Mercedes-Benz')
     @year = year
     @color = color
     @model = model
@@ -49,7 +49,7 @@ class MyCar
   end
 
   def shutdown
-    puts "Breaking to 0 and shutting down engine"
+    puts 'Breaking to 0 and shutting down engine'
     @speed = 0
   end
 
@@ -69,7 +69,7 @@ car.brake(150)
 car.speed_up(100)
 car.brake(42)
 
-car.spray_paint("Prussian Blue")
+car.spray_paint('Prussian Blue')
 puts "This car is from #{car.year} and its color is #{car.color}"
 car.shutdown
 
@@ -92,7 +92,7 @@ class Doggie
 
   # static method
   def self.identify
-    "A dog"
+    'A dog'
   end
 
   def self.number_of_instances
@@ -109,7 +109,7 @@ class Doggie
 end
 
 Doggie.identify
-rex = Doggie.new("Rex")
+rex = Doggie.new('Rex')
 puts Doggie.number_of_instances
 rex.identify
 puts rex
@@ -122,14 +122,14 @@ module ShadyScientificOrgs
     attr_reader :days_since_last_accident, :employees
   
     def initialize
-      super("Black mesa")
+      super('Black mesa')
       @days_since_last_accident = 0
-      @employees = ["Barney Calhoun"]
+      @employees = ['Barney Calhoun']
     end
   
-    def conduct_experiment(specimen = "a normal specimen")
-      if specimen == "xen crystal" || gman_shenanigans
-        puts "An resonance cascade has occured!"
+    def conduct_experiment(specimen = 'a normal specimen')
+      if specimen == 'xen crystal' || gman_shenanigans
+        puts 'An resonance cascade has occured!'
         @days_since_last_accident = 0
       else
         super()
@@ -145,10 +145,10 @@ module ShadyScientificOrgs
 
     def gman_shenanigans
       if Random.rand < 0.8
-        puts "Prepare for unforeseen consequences"
+        puts 'Prepare for unforeseen consequences'
         true
       else
-        puts "Buisiness as usual"
+        puts 'Buisiness as usual'
         false
       end
     end
@@ -159,14 +159,14 @@ end
 
 black_mesa = ShadyScientificOrgs::BlackMesa.new
 black_mesa.conduct_experiment
-black_mesa.conduct_experiment("xen crystal")
+black_mesa.conduct_experiment('xen crystal')
 
 # singleton method
 
 p black_mesa.employees
 def black_mesa.hire_freeman
-  puts "Hiring Gordon Freeman"
-  add_employee("Gordon Freeman")
+  puts 'Hiring Gordon Freeman'
+  add_employee('Gordon Freeman')
 end
 
 black_mesa.hire_freeman

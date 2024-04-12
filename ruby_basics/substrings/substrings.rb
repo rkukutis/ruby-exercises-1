@@ -17,7 +17,7 @@ def substrings_manual(word, valid_substring_array)
   # Go over each searched substring
   valid_substring_array.each do |substring|
     substrings_chars = substring.downcase.chars
-    occurence_number = 0
+    occurrence_number = 0
     # Go over each char in containing string
     word_chars.each_with_index do |word_char, index|
       matched_chars = 0
@@ -28,9 +28,9 @@ def substrings_manual(word, valid_substring_array)
           matched_chars += 1 if word_chars[index + substring_char_index] == substring_char
         end
       end
-      occurence_number += 1 if matched_chars == substring.length
+      occurrence_number += 1 if matched_chars == substring.length
     end
-    count_hash[substring] = occurence_number unless occurence_number.zero?
+    count_hash[substring] = occurrence_number unless occurrence_number.zero?
   end
   count_hash
 end
